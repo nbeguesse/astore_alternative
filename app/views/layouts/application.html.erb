@@ -1,0 +1,635 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Angelboy - <%=@title%></title>
+<style type="text/css">
+
+
+/* PAGE STYLE */
+body {
+      margin:24px;
+      padding:0px;
+      background:#FFFFFF;
+      color:#000000;
+      min-width:748px;
+      font-family:'Verdana', sans-serif;
+      font-size:9pt;
+      font-weight:500;
+      line-height:12pt;
+      text-decoration: none;	
+}
+table {
+      font-family:'Verdana', sans-serif;
+      font-size:9pt;
+}
+form {
+      margin:0px;
+}	
+a {
+      color: #2B5A6B; 
+      text-decoration: underline;
+}
+a img{ border:none;}
+hr {
+      border:0;
+      width:100%;
+      color:#FFFFFF;
+      background-color:#FFFFFF;
+      height:1px;
+      width:100%;
+      margin:6px 0px 12px 0px;
+}
+#wrap {
+      width:748px;
+}
+#rule {
+      height:1px;
+      background-color:#000000;
+      width:100%;
+      margin:6px 0px 12px 0px;
+}
+h2 {
+      font-size:16px;
+      font-weight:bold;
+      margin:0px;
+      padding:0px;
+}
+h3 {
+      font-size:14px;
+      font-weight:bold;
+      margin:0px;
+      padding:0px;
+}
+	
+/* MAIN PAGE AREA */	
+#mainwrap {
+      float:left;
+}
+#main {
+      width:530px;
+      margin-bottom:19px;
+      overflow:hidden;
+}
+div#header {
+      background:#FFFFFF;
+      padding:6px 24px 4px;
+      margin:0;
+      vertical-align:middle;
+}
+a#mainheadertitle {
+      padding:0px;
+      font-family:'Verdana', sans-serif;
+      font-size:15pt;
+      font-weight:normal;
+      line-height:1.5em;
+      color:#000000; 
+      margin:0px;
+      text-align:left;
+      vertical-align:middle;
+      text-decoration:none;
+}
+a#mainheadertitle:hover {
+      text-decoration:underline;
+}
+td#mainheaderlogo {
+      padding:5px;
+}
+img#mainlogo {
+      padding-right:5px;
+}
+div#mainsubheader {
+      background:#F2F2F2;
+      padding:10px 24px;
+      vertical-align:middle;
+}
+div#contentsubheader {
+      width:482px;
+      overflow:hidden;
+}
+div#subheaderlinks {
+      float:right;
+      text-align:right;
+}
+div#subheadertitle {
+      font-size:12pt;
+      font-weight:bold;
+}
+div#contenterror {
+      background:#FFFFFF;
+      padding:14px 24px;      
+}
+span.currentpage {
+      font-weight:bold;
+}
+
+span.error {
+      font-weight:bold;
+}
+	
+/* SIDEBAR */
+#sidebar {
+      float:right;
+      width:200px;
+      overflow:hidden;
+}
+#sidebar ul {
+      margin-bottom:0;
+}
+#sidebar h3, #sidebar p {
+      padding:0 10px;
+}
+
+/* GENERAL SIDEBAR WIDGET STYLES */
+ul#widget,ul.widget li.widget {
+      margin:0;
+      padding:0;
+      list-style:none;
+}
+li.widget {
+      float:left;
+      width:200px;
+      margin-bottom:19px;
+}
+ul#widget div {
+      background:#FFFFFF;
+}
+ul#widget h3 {
+      font-family:'Verdana', sans-serif;
+      font-size: 10pt;
+      font-weight: bold;
+      color:#000000;
+      margin:0px;
+      padding:6px 15px 4px;
+      text-align:left;
+      background:#FFFFFF;
+}
+ul#widget p {
+      font-family:'Verdana', sans-serif;
+      font-size: 9pt;
+      font-weight: normal;
+      color:#000000;
+      margin:0px;
+      padding: 10px 15px 20px;
+}
+
+/* SEARCHBROWSE WIDGET */
+div#searchbrowse {
+      padding:14px;
+}
+div#searchbrowse div.indent {
+      padding: 5px 0px 5px 15px;
+}
+select.searchwidget {
+      width:173px;
+      margin-bottom:6px;
+}
+input#searchwidgetkeywords {
+      width:134px;
+}
+span#SearchAtAmazon {
+      font-size: 8pt;
+}
+div#browsetitle {
+      font-weight:bold;
+      padding-bottom:7px;
+}
+span.selectedcategory {
+      font-weight:bold;
+}
+
+/* LISTMANIA WIDGET */
+div.listwidget {
+      padding-bottom:16px;
+}
+ul.listmania {
+      margin:0px;
+      padding:0px;
+      list-style:none;
+}
+ul.listmania li {
+      margin:0px;
+      padding:5px;
+      padding-left:10px;
+      list-style:none;
+      text-align:center;
+}
+ul.listmania li.clsOdd,li.listimages {
+      background-color:#FFFFFF;
+}
+ul.listmania li.clsEven {
+      background-color:#FFFFFF;
+}
+
+img.listimage {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* PRODUCTS WIDGETS */
+div.productwidget {
+      padding:0px;
+      padding-bottom:16px;
+}
+div.productwidget .price {
+      font-weight:bold;
+}
+table.sidebarproducts {
+      font-family:'Verdana', sans-serif;
+      font-size:9pt; 
+      width:200px;
+}
+table.sidebarproducts td {
+      padding:5px;
+}
+table.sidebarproducts td.image {
+      vertical-align:top;
+      width:75px;
+}
+table.sidebarproducts td.text {
+      vertical-align:middle;
+      width:115px;
+}
+table.sidebarproducts span.listtitle {
+      font-weight:bold;
+}
+div.privacylink {
+      padding: 2px 5px;
+      font-size:7pt;
+      text-align:center;
+}
+
+/* FOOTER */
+div#footer {
+      width:530px;
+      margin-bottom:28px;
+      color:#FFFFFF;
+      border-top:1px solid #FFFFFF; 
+}
+div#footer p {
+      padding:5px;
+      margin:0;
+}
+div#leftfoot {
+      float:left;
+      width:430px;
+}
+div#rightfoot {
+      float:right;
+      width:100px;
+      text-align:right;
+}
+
+/* WISHLIST WIDGET */
+div#wishlist_page_link
+{
+    padding:7px 5px 5px;
+}
+
+/*Associate Provided CSS*/
+body {
+margin:0;
+padding:0;
+min-width:0;
+}
+
+a {
+    text-decoration: none;
+    color: #a00;
+}
+
+div#mainsubheader {
+  display:none;
+}
+div#footer {
+    border-top: 1px solid #cccccc;
+    color: #cccccc;
+   width:auto;
+}
+#main {
+  width:100%
+}
+#mainwrap {
+  float:none;
+}
+#wrap {
+width:auto;
+}
+
+div#featuredProducts {
+      background:#FFFFFF;
+      padding:14px 24px;
+}
+div#featuredProducts .price {
+      font-weight:bold;
+}
+table.products {
+      width:482px;
+      font-family:'Verdana', sans-serif;
+      font-size:9pt; 
+}
+table.products td {
+	  width:33%;
+      padding:5px;
+}
+table.products tr.pagination {
+	  text-align:center;
+}
+table.products tr.imagerow td {
+	  vertical-align:bottom;
+}
+table.products tr.textrow td {
+	  vertical-align:top;
+      padding-bottom:20px;
+}
+
+/*Associate Provided CSS*/
+table.products tr.imagerow td {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+table.products tr.textrow td {
+    padding-bottom: 20px;
+    text-align: center;
+    vertical-align: top;
+}
+
+
+table.products {
+    width: 100%;
+}
+
+
+table.products tr.textrow td {
+  padding-bottom: 40px;
+    padding-top: 15px;
+}
+
+/* PRODUCT DETAILS */
+#content {
+      background:#FFFFFF;
+      padding:14px 24px;
+}
+span.reviewtitle {
+      font-size:12px;
+      font-weight:bold;
+}
+table#detailheader {
+      width:482px;
+}
+table#detailheader td {
+      vertical-align:top;
+}
+td#detailImage {
+      padding: 5px 20px 5px 5px;
+}
+img#detailProductImage {
+    max-width: 300px;
+}
+div#productDescription {
+      padding-top:20px;
+}
+div#customDescription
+{
+    padding-bottom:10px;
+}
+table#prices
+{
+    margin:0px;
+}
+#notAvailableNotice
+{
+    margin-top:10px;
+}
+.amount {
+      font-size:10.5pt; 
+      font-weight:bold;
+}
+div#titleAndByLine
+{
+    margin-bottom:5px;
+}
+form#addToCartForm
+{
+    margin-top:10px;
+}
+td.issueslabel,
+td.pricelabel
+{
+    font-size:10.5pt; 
+    font-weight:bold;
+    text-align:right;
+    white-space:nowrap;
+}
+tr#listprice td
+{
+    vertical-align:bottom;
+}
+tr#listprice td span.amount
+{
+    text-decoration:line-through;
+    font-weight:normal;
+}
+#loyaltypoints #loyaltyPointsAmount
+{
+    font-weight:normal;
+}
+.by {
+      font-size:9pt; 
+      font-weight:normal;
+}
+
+/* Variation selector styles */ 
+div#dynVariationSelector {
+  margin-top:10px;
+  background:#F2F2F2;
+  padding:0px;
+  display:none;
+}
+div.variationSelector {
+  padding:0px 10px;
+}
+div.selectorHeading {
+  font-size:14px;
+  font-weight:bold;
+  margin: 5px 0px 15px;
+}
+div.selectorAvailability {
+  margin: 12px 0px 5px;
+}
+div.dimensionLabel {
+  font-weight:bold;
+  margin-bottom:3px;
+}
+div.dimValContainer {
+  margin-bottom:5px;
+}
+span.dv_hover, span.dv_avail, span.dv_selected, span.dv_unavail { 
+  padding:3px 2px;
+  margin:0px;
+  white-space:nowrap;
+  line-height:2.3;
+  cursor:pointer;
+  font-size:10px;
+}
+span.dv_hover { 
+  border:2px solid #2B5A6B;
+  margin:-1px;
+}
+span.dv_avail { 
+  border:1px solid #2B5A6B;
+} 
+span.dv_selected { 
+  border:1px solid #2B5A6B;
+  background-color:#2B5A6B;
+  color:#FFFFFF;
+}
+span.dv_unavail { 
+  border:1px dashed #2B5A6B;
+}
+.relative {
+  position:relative;
+}
+div#chooseVariationBFCartAdd {
+  position:absolute;
+  top:30px;
+  left:0px;
+  width:200px;
+  display:none;
+  background-color:#FFFFFF;
+  color:#000000;
+  border:2px ridge #C0C0C0;
+  z-index:2;    
+  padding:5px;
+}
+div#variationNotAvailable {
+  position:absolute;
+  top:50px;
+  left:-5px;
+  width:180px;
+  display:none;
+  background-color:#EEBBBB;
+  color:#770000;
+  border:1px solid #550000;
+  z-index:2;    
+  padding:5px;
+  font-weight:bold;
+  opacity:.9;
+  filter:alpha(opacity = 90);
+  text-align:center;
+}
+span.notAvailHighlight {
+  color:#AA0000;
+}
+img.custReviewStars {
+  margin-left:10px;
+}
+div#editorialReviews
+{
+    overflow-x:auto;
+    width:482px;
+}
+div#legalDisclaimers
+{
+    font-size:8pt;
+}
+
+/*Associate Provided CSS*/
+
+</style>
+
+<script type="text/javascript">
+<!--
+// function nifty() {
+//   if (!NiftyCheck()) {
+//      return;
+//   }
+
+//   Rounded("div#main","top","#FFFFFF","#F2F2F2");
+//     Rounded("div#main","bottom","#FFFFFF","#FFFFFF");
+//   Rounded("li.widget","top","#FFFFFF","#FFFFFF");
+//   Rounded("li.widget","bottom","#FFFFFF","#FFFFFF");
+//   Rounded("div#dynVariationSelector","all","#FFFFFF","#F2F2F2");
+// }
+
+// function popUp(ref) {	
+//   var strFeatures = "toolbar=no,status=no,menubar=no,location=no"
+//   strFeatures = strFeatures + ",scrollbars=yes,resizable=yes,height=500,width=500"
+//   newWin = window.open(ref,"TellObj",strFeatures);
+//   if(newWin != null){
+// 	newWin.opener = top;
+//   }
+// }
+
+// function search(form)
+// {
+//   var sel = form.elements["node"].selectedIndex;
+//   if (sel == 0) {
+//     alert("Please select a search category.");
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+// -->
+</script>
+</head>
+  <body>
+
+<div id="wrap">
+ <div id="mainwrap">
+
+  <div id="main">
+    <div id="mainsubheader">
+      
+<div id="contentsubheader">
+  <div id="subheaderlinks">
+    <a href="/angelboy-20/cart"><img src="http://g-ecx.images-amazon.com/images/G/01/associates/storebuilder/btn_cart2._CB156424116_.png" width="25" align="absmiddle" alt="Shopping Cart" name="pngImage" height="20" border="0" /></a>
+    <a href="/angelboy-20/cart">Shopping Cart</a>
+  </div>
+  <div id="subheadertitle">All Books</div>
+</div>
+
+    </div>
+    <div id="content">
+       
+
+
+      <%=yield%>
+
+    </div>
+  </div>
+
+  <div id="footer">
+   <p> </p>
+   <div id="leftfoot">
+     <%=link_to "All Books", root_path%>
+     | <a href="/angelboy-20/cart">Shopping Cart</a>
+     <br/>&nbsp;
+ 
+   </div>
+   <div id="rightfoot"><a href="https://www.amazon.com?_encoding=UTF8&camp=212353&creative=380561&linkCode=sb1&tag=angelboy-20" target="_blank"><img src="http://g-ecx.images-amazon.com/images/G/01/associates/network/amazon-logos/powered-by-amazon-b._CB156424183_.png" width="87" alt="Powered by Amazon.com" name="pngImage" height="25" border="0" /></a></div>
+  <p> </p>
+ </div>
+</div>
+
+  <div id="sidebar">
+    <ul id="widget">
+      
+    </ul>
+  </div>
+</div>
+</body>
+
+</html>

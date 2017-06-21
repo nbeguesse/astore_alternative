@@ -1,0 +1,21 @@
+   <div id="featuredProducts">
+	  <table class="products" cellspacing="0">
+		<tr class="imagerow">
+
+			<%@items.each do |item|%>
+			  <td><%=link_to(image_tag("#{item["ASIN"]}.jpg", :alt=>item["ItemAttributes"]["Title"]), product_path(:asin=>item["ASIN"]))%></td>
+			<%end%>
+		</tr>
+		<tr class="textrow">
+			 <%@items.each do |item|%>
+			 	<td>
+			 		<%=link_to item["ItemAttributes"]["Title"], product_path(:asin=>item["ASIN"])%>
+			 		<br> by <span class="by"><%=item["ItemAttributes"]["Author"]%></span>
+			 		<br><span class="price"><%=item["ItemAttributes"]["ListPrice"]["FormattedPrice"]%></span>
+			 	</td>
+			 <%end%>
+			</tr>
+			
+
+	  </table>
+    </div>

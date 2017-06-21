@@ -1,0 +1,291 @@
+<table cellspacing="0" id="detailheader">
+<tr>
+<td id="detailImage">
+<div class="relative">
+<a href="/angelboy-20/images/0989887901" target="ImageView" id="imageViewerLink"><img src="https://images-na.ssl-images-amazon.com/images/I/51iaK6Xhq7L._SL210_.jpg" alt="Angelboy Vol. 1" id="detailProductImage"></a>
+</div>
+</td><td>
+<div id="titleAndByLine">
+<h2>Angelboy Vol. 1<br>
+<span class="by">By N. M. Beguesse</span>
+</h2>
+</div>
+<table id="prices">
+<tr id="ourprice">
+<td class="pricelabel"><span>Price: </span></td><td><span class="amount" id="detailOfferPrice">$15.00</span><span class="supersaver"></span><a href="https://www.amazon.com/gp/help/customer/display.html?tag=angelboy-20&linkCode=sb1&camp=212353&creative=380561&pop-up=1&nodeId=527692" onClick="popUp(this.href); return false;"> Details </a></td>
+</tr>
+</table>
+<form method="post" action="/angelboy-20/cart/add/0989887901" name="buybox" id="addToCartForm">
+<input type="hidden" name="sessionId" value="130-7592637-2515421"><input type="hidden" name="offerId" value="kYm2TowELPEgy8zBuXbC3OtRHA1h1W1VgTNISe%2BsmuQcvxqmqMK7vsV9d48ERd3utC%2FwYx%2FYijkx7XDMm788UsXVp6FR9SyfIWdhgaaVouJPJQOo2ShbKw%3D%3D"><input type="image" src="http://g-ecx.images-amazon.com/images/G/01/associates/storebuilder/add-to-cart-yellow._CB156424126_.png" width="159" alt="Add to cart" name="pngImage" id="buybutton" height="27" border="0">
+</form>
+<br>
+<p>
+<b>Availability: </b>Usually ships in 24 hours<br>Ships from and sold by Amazon.com<br>
+</p>
+<p>
+<a href="https://www.amazon.com/gp/offer-listing/0989887901?tag=angelboy-20&linkCode=sb1&camp=212353&creative=380553" target="_blank">20 new or used available from $3.30</a>
+</p>Average customer review: <a href="https://www.amazon.com/product-reviews/0989887901?tag=angelboy-20&linkCode=sb1&camp=212353&creative=380553" target="_blank"><img height="11" width="56" name="pngImage" src="http://images.amazon.com/images/G/01/associates/network/star45_tpng.png"></a>
+<br>(<a href="https://www.amazon.com/product-reviews/0989887901?tag=angelboy-20&linkCode=sb1&camp=212353&creative=380553" target="_blank">37 customer reviews</a>)</td>
+</tr>
+</table>
+
+
+<script type="text/javascript">
+function registerNamespace(ns)
+{
+    var parts = ns.split(".");
+    var root = window;
+
+    for(var i = 0; i < parts.length; i++)
+    {
+        if(!root[parts[i]])
+        {
+            root[parts[i]] = new Object();
+        }
+
+        root = root[parts[i]];
+    }
+}
+
+registerNamespace('Associates.Util');
+
+Associates.Util.getElementsByTagAndClass = function(tag, class_name, parent_element)
+{
+    if(!parent_element){ parent_element = document; }
+    
+    var tags = parent_element.getElementsByTagName(tag);
+   
+    var class_tags = new Array();
+
+    var class_regex = new RegExp("\\b" + class_name + "\\b");
+    for (var i = 0; i < tags.length; i++)
+    {
+        if(tags[i].className.match(class_regex))
+        {
+            class_tags.push(tags[i]);
+        }
+    }
+    
+    return class_tags;
+}
+
+Associates.Util.findAncestor = function(child, test)
+{
+    var test_func;
+
+    if(typeof test == 'object')
+    {
+        test_func = function(obj){ return obj == test };
+    }
+    else if (typeof test == 'string')
+    {
+        test_func = function(obj){ return obj.nodeName == test };
+    }
+    else
+    {
+        test_func = test;
+    }
+
+    while(child && !test_func(child))
+    {
+        child = child.parentNode;
+    }
+
+    return child;
+}
+
+Associates.Util.getSelectedRadio = function(form, radioName)
+{
+    if (typeof form == 'string') { form = document.forms[form]; }
+
+    // If there's only one radio option, form[radioName] will be a single
+    // element and not a collection.  Just return its value.
+    if (!form[radioName].length) { return form[radioName].value; }
+
+    for (var i = 0; i < form[radioName].length; i++)
+    {
+        if (form[radioName][i].checked)
+        {
+            return form[radioName][i].value;
+        }
+    }
+    
+    return undefined;
+}
+
+
+function AttachEventListener(object, event, handler, useCapture)
+{
+    if( !useCapture )
+    {
+        useCapture = false;
+    }
+
+    if( object.addEventListener )
+    {
+        object.addEventListener(event, handler, useCapture);
+    }
+    else
+    {
+        object.attachEvent('on' + event, handler);
+    }
+}
+
+
+registerNamespace('Assoc.DOMEvent');
+Assoc.DOMEvent.AddHandler = function(object, event, handler, context)
+{
+    var event_handler;
+    if(context) 
+        event_handler = function(event){ handler.call(context, event) };
+    else
+        event_handler = handler;
+
+    AttachEventListener(object, event, event_handler);
+}
+
+function GetEventTarget(event)
+{
+    return (event.target)? event.target : event.srcElement;
+}
+
+//borrowed from quirksmode. Stops event bubbling.
+function StopEventPropagation(event)
+{
+    if(!event) { event = window.event; }
+
+    //MSIE
+    event.cancelBubble = true;
+
+    //w3c
+    if(event.stopPropagation) { event.stopPropagation(); }
+}
+
+function StopEventDefault(event)
+{
+    if(!event) { event = window.event; }
+
+    //MSIE
+    event.returnValue = false;
+
+    //w3c
+    if(event.preventDefault) { event.preventDefault() };
+}
+
+//does both StopEventPropogation and StopEventDefault
+function StopEvent(event)
+{
+    StopEventDefault(event);
+    StopEventPropagation(event);
+}
+
+function mouseOverFromElement(event)
+{
+    return (event.relatedTarget)? event.relatedTarget : event.fromTarget;
+}
+
+function mouseOutToElement(event)
+{
+    return (event.relatedTarget)? event.relatedTarget : event.toTarget;
+}
+
+
+var wImages;
+var link = document.getElementById('imageViewerLink');
+
+function openImageViewer(event)
+{
+    if (wImages == null || wImages.closed)
+    {
+        wImages = window.open(link.href, 'ImageView',
+            'width=625,height=700,scrollbars,resizable');
+    }
+    else
+    {
+        wImages.location = link.href;
+    }
+    wImages.focus();
+    return false;
+}
+
+AttachEventListener(link, 'click', openImageViewer);
+</script>
+
+
+<div id="productDescription">
+  
+  
+
+
+
+
+<h2>Product Description</h2>
+<p><div></div><div>Cyrus' life ends with a flash and a bang as the bullet enters his heart. Moments later, he opens his eyes to find his body changed, sporting a new pair of... angel wings? Something's definitely not right here... Unable to be seen or heard by anyone and with no one guiding him, Cyrus strikes out on his own as he attempts to make up for his wasted life. At first he is merely observing, but he quickly becomes more involved as the darkness of humanity reveals itself. He does his best to help, but then must decide what his place in the world will be--and whether he will pursue active or passive peace.</div><div></div><div>New edition features a revised cover and storyline.</div></p>
+
+</div>
+
+
+
+
+
+
+
+
+<div id="productDetails">
+  <hr/>
+  <h2>Product Details</h2>
+  <ul>
+<li>Amazon Sales Rank: #2262257 in Books
+</li>
+<li>Published on: 2013-09-18</li>
+<li>Original language:
+      English</li>
+<li>Number of items: 1</li>
+<li>Dimensions: 9.00" h x
+  .54" w x
+  6.00" l, 
+  .65 pounds
+  </li>
+<li>Binding: Paperback</li>
+<li>216 pages</li>
+</ul>
+
+</div>
+
+
+<hr>
+<h2>Editorial Reviews</h2>
+<div id="editorialReviews">
+<p>
+<span class="reviewtitle">Review</span>
+<br>
+" ANGELBOY is a beautifully illustrated Manga comic that delivers when it comes to plot, depth and anticipation. The illustrations are superb -- Beguesse is a gifted Manga artist and her artwork alone makes this book worth reading. They're evocative and memorable and they work well with the compelling storyline, which has slightly Christian overtones. On the one hand, the story is simple enough -- good versus evil; on the other hand, there's enough plot depth, bloodshed and violence to make this a bit of a thriller - the reader never knows what will happen next...."<br><div>-<i>IndieReader</i></div><br /><br /><div>"A tale with an ethereal hero that's just getting started, but profound nonetheless, and illustrative in every sense." -<i>Kirkus Reviews</i></div><div></div><br /><br />"A fast-paced manga with an engaging story." -&nbsp;<i>Kayti Nika Raet, author of Niko</i><br /><br />"When I opened up a copy of volume 1 and glanced through as she was talking, I could see that she had placed a bit of her soul in each page of this book. Everything was hand drawn, which is very rare in the industry today...&nbsp;To my surprise it wasn't close to being an average superhero comic. The main character goes through normal human issues and emotions even in his afterlife. I did love it and cannot wait for Vol. 2." -<i>Seth Greenwood, author of Gale</i>
+</p>
+<p>
+<span class="reviewtitle">About the Author</span>
+<br>
+N. M. Beguesse lives in Savannah, Georgia. She created Angelboy all on her own-- including writing, illustrating and publishing. By day, she is a senior web developer and mobile applications developer.
+</p>
+</div>
+<div id="customerReviews">
+<hr>
+<h2>Customer Reviews</h2>
+<p>Most helpful customer reviews</p>
+<p>3 of 3 people found the following review helpful.<br>
+<span class="reviewtitle"><img height="11" width="56" name="pngImage" style="margin-left:0px;margin-right:10px;" class="custReviewStars" src="http://images.amazon.com/images/G/01/associates/network/star50_tpng.png" alt="5">A profoundly moving story</span>
+<br>
+<span>By Lynda Dickson - Books Direct</span>
+<br>Cyrus, a teenage boy, is shot dead for reasons which are not revealed. He wakes up, thanks God that he has survived, and promises to turn his life around ... only to discover that he has in fact died and become an angel. Cyrus finds that no one can see him and resigns himself to spending the rest of eternity on his own. One day he saves a boy's life and finally meets someone who can actually see him. He feels like he's been given a chance to redeem himself, and he sets out to do what he can to help the boy's family.<br /><br />I haven't read any manga before, so I am by no means an expert. However, as a reader, I found this to be a profoundly moving story and easily accessible. I read it in one sitting. The illustrations are stark, dark, and atmospheric, and they add immensely to the impact of the tale. This is not one for the faint-hearted.<br /><br />I look forward to sharing more adventures with Cyrus and to further exploring the medium of manga in general.<br /><br />Warnings: violence, coarse language.<br /><br />I received this book in return for an honest review.</p>
+<p>2 of 2 people found the following review helpful.<br>
+<span class="reviewtitle"><img height="11" width="56" name="pngImage" style="margin-left:0px;margin-right:10px;" class="custReviewStars" src="http://images.amazon.com/images/G/01/associates/network/star50_tpng.png" alt="5">A Genuine, Pleasant Surprise</span>
+<br>
+<span>By Ajay Kundlas</span>
+<br>When I first met the author and she pitched me the book, I truly wanted to pass up on it because I thought it was a Hellboy rip-off. However, after making the faux-paus of insisting she not sell it at her Mega-Con booth for prices the customers wanted to pay, she rightly charged me the full price and I couldn't exactly say no at that point. It sat on my shelf for some time, untouched, unread, and a reminder of my blunder and loss of a potentially useful $15. Eventually, however, I chose to pick it up and read through, and I was pleasantly surprised at how well done the book is.<br /><br />The art is exceptionally well done, going into much more detail than I originally thought the book was going to offer given previous graphic novels I've picked up from Cons. Beyond the fact that you do read it from left to right, I can honestly say that this book is a genuine manga, filled to the brim with panels and pages chock-full of art for visual storytelling. I also give credit that the writing is, for the most part, fairly well done as well. Save a few moments where the fact that this is a personal project did come to light, this was a very mature book in how it handles itself. The best thing I can say though is that I truly appreciated the story. There are certain elements here that I have seen in other projects, but I have to say that just in this one volume I have been presented with a unique, likable character, a thought-out world with a specific set of rules, a good set-up for future stories, and a mystery that I would like to see answered in the future.<br /><br />In general, I am truly impressed with this book. It truly is a western manga and I give the creator props for really developing her story and world. Here's hoping there are more volumes to come :)</p>
+<p>2 of 2 people found the following review helpful.<br>
+<span class="reviewtitle"><img height="11" width="56" name="pngImage" style="margin-left:0px;margin-right:10px;" class="custReviewStars" src="http://images.amazon.com/images/G/01/associates/network/star50_tpng.png" alt="5">Great for both the Novice & Expert</span>
+<br>
+<span>By J. Hertzog</span>
+<br>I have personally had the chance to review this, and I felt it necessary to share my opinion on Amazon.<br /><br />This is one of my first manga/comics that I've read, so I'm delighted to say I really, really enjoyed it. The artwork was beautifully done, and the story content itself was so immersive. I loved the lore-building of this, and I honestly can't wait for the next one.<br /><br />Pros:<br />-Very nice manga-styled structure.<br />-His sword is awesome - you'll understand later.<br />-Great build up to the second book.<br />-Easy to follow for 95%, which is impressive because she didn't have a road map laid out.<br /><br />Cons:<br />-Can be confusing for 3-4 pages near the end for the novice, like me. *This was fixed by re-reading it, and it made sense the second time.<br /><br />Hope that you enjoy it as much as I did! I can't wait for the second one that comes out here soon.</p>
+<span><a href="https://www.amazon.com/product-reviews/0989887901?tag=angelboy-20&linkCode=sb1&camp=212353&creative=380553" target="_blank">See all 37 customer reviews...</a></span>
+</div>
+
