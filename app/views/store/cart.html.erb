@@ -1,0 +1,56 @@
+<%if @cart && @cart["CartItems"]%>
+    <div id="cart">
+      <p>When you are ready to check out, please click the "Proceed to Checkout" button at the bottom of this page.  You will be taken to the Amazon.com cart page to securely complete your transaction.</p>
+      <%=form_tag modify_cart_path%>
+        <table id="cart" cellspacing="1">
+          <tr><td colspan="4" id="toprule">&nbsp;</td></tr>
+          <tr class="heading">
+            <th class="delete">&nbsp;</th>
+            <th class="item">Item</th>
+            <th class="quantity">Quantity</th>
+            <th class="price">Price</th>
+          </tr>
+          <%items = @cart["CartItems"]["CartItem"]
+          items = [items] if items.is_a?(Hash)
+          i = 0
+          items.each do |item|%>
+            <%i += 1%>
+            <tr class="clsOdd">
+              <td class="delete">
+                <a href="<%=remove_path(:cart_item_id=>item["CartItemId"])%>"><%=image_tag "delete-sm.png"%></a>
+              </td>
+              <td class="item"><a href="<%=product_path(:asin=>item["ASIN"])%>"><%=item["Title"]%></a></td>
+              <td class="quantity"><input class="quantity" type="text" size="2" name="Item.<%=i%>.Quantity" value="<%=item["Quantity"]%>"><input type="hidden" name="Item.<%=i%>.CartItemId" value="<%=item["CartItemId"]%>"></td><td class="price"><%=item["ItemTotal"]["FormattedPrice"]%></td>
+            </tr>
+          <%end%>
+          <tr>
+            <td colspan="4" id="subtotal"><span id="subtotal">Subtotal: <%=@cart["SubTotal"]["FormattedPrice"]%></span></td>
+          </tr>
+          <tr>
+            <td colspan="4" id="updatesubtotal">Make any changes above? <input type="image" src="<%=image_path("update-subtotal-sm.png")%>" width="94" alt="Update subtotal" align="absmiddle" value="Go" id="updatesubtotal" height="17" border="0"></td>
+          </tr>
+      </table>
+      </form>
+      <div id="cartbuttons">
+        <div id="keepshopping">
+          <%=link_to(image_tag("continue-shopping-md.png"), root_url)%>
+        </div>
+        <div id="checkout">
+          <%=link_to(image_tag("proceed-to-checkout-yellow.png"), @cart["PurchaseURL"])%>
+        </div>
+      </div>
+    </div>
+<%else%>
+
+  <div id="cart">
+    <h3>Your shopping cart is empty.</h3>
+    <div id="cartbuttons">
+      <div id="keepshopping">
+        <%=link_to(image_tag("continue-shopping-md.png"), root_url)%>
+      </div>
+    </div>
+  </div>
+
+<%end%>
+
+

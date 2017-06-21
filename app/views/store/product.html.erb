@@ -1,0 +1,73 @@
+<table cellspacing="0" id="detailheader">
+  <tr>
+    <td id="detailImage">
+      <div class="relative">
+        <a href="<%=@item["LargeImage"]["URL"]%>" target="ImageView" id="imageViewerLink"><img src="<%= @item["LargeImage"]["URL"]%>" alt="<%=@item["ItemAttributes"]["Title"]%>" id="detailProductImage" style="max-width:140px"></a>
+      </div>
+    </td>
+    <td>
+      <div id="titleAndByLine">
+        <h2><%=@item["ItemAttributes"]["Title"]%><br>
+          <span class="by">By <%= @item["ItemAttributes"]["Author"]%></span>
+        </h2>
+      </div>
+      <table id="prices">
+        <tr id="ourprice">
+          <td class="pricelabel"><span>Price: </span></td><td><span class="amount" id="detailOfferPrice"><%=@item["ItemAttributes"]["ListPrice"]["FormattedPrice"]%></span><span class="supersaver"></span><a href="https://www.amazon.com/gp/help/customer/display.html?tag=angelboy-20&linkCode=sb1&camp=212353&creative=380561&pop-up=1&nodeId=527692" onClick="popUp(this.href); return false;"> Details </a></td>
+        </tr>
+      </table>
+      <%=form_tag cart_path%>
+      <%
+      offers = @item["Offers"]["Offer"]
+      offer = offers.is_a?(Array) ? offers.first : offers
+      %>
+      <input type="hidden" name="offer_id" value="<%=offer["OfferListing"]["OfferListingId"]%>">
+        <input type="image" src="http://g-ecx.images-amazon.com/images/G/01/associates/storebuilder/add-to-cart-yellow._CB156424126_.png" width="159" alt="Add to cart" name="pngImage" id="buybutton" height="27" border="0">
+        </form>
+        <br>
+        <p>
+        <b>Availability: </b><%=offer["OfferListing"]["Availability"]%><br>Ships from and sold by Amazon.com<br>
+        </p>
+        <p>
+
+        <!--</p>Average customer review: <a href="<%= @item["DetailPageURL"]%>" target="_blank"><img src="<%=image_path "star45_tpng.png"%>"></a>
+        <br>(<a href="<%= @item["DetailPageURL"]%>" target="_blank">See customer reviews</a>)-->
+    </td>
+  </tr>
+</table>
+
+
+
+<div id="productDescription">
+  
+  
+
+
+
+
+<h2>Product Description</h2>
+<%
+reviews = @item["EditorialReviews"]["EditorialReview"]
+reviews = [reviews] if reviews.is_a?(Hash)
+reviews.each do |review|
+%>
+<p><%= raw(review["Content"])%></p>
+<%end%>
+
+
+
+<hr>
+<h2>Editorial Reviews</h2>
+<div id="editorialReviews">
+<p>
+<br>
+<%=render :partial=>"editorial_#{@item["ASIN"]}" rescue nil%>
+</p>
+
+</div>
+<div id="customerReviews">
+<hr>
+<iframe src="<%=@item["CustomerReviews"]["IFrameURL"]%>" width="900" height="400" style="width:100%" frameborder="0">
+
+</div>
+

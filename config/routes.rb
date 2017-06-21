@@ -3,7 +3,10 @@ Astore::Application.routes.draw do
   # first created -> highest priority.
 
   # Sample of regular route:
-  get 'products/:asin' => 'pages#product', :as=> :product
+  get 'products/:asin' => 'store#product', :as=> :product
+  match "cart" => 'store#cart', :as=>:cart
+  match "cart/modify" => 'store#modify_cart', :as=>:modify_cart
+  get "cart/remove" => 'store#remove', :as=>:remove
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
@@ -48,7 +51,7 @@ Astore::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'pages#index'
+  root :to => 'store#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -545,6 +545,79 @@ div#legalDisclaimers
     font-size:8pt;
 }
 
+div#cart {
+      background:#FFFFFF;
+      padding:28px 24px;
+}
+div#cart span#subtotal {
+      font-weight:bold;
+}
+div#cart input.quantity {
+      text-align:right;
+}
+table#cart {
+      width:482px;
+      font-family:'Verdana', sans-serif;
+      font-size:9pt;
+      border:0px;
+}
+td#toprule {
+      border-bottom: solid 1px #FFFFFF;
+}
+table#cart td {
+      padding:5px;
+}
+table#cart th {
+      background-color:#E0E0E0;
+      height:1px;
+      padding:3px;
+}
+table#cart tr.clsOdd {
+      background-color:#FFFFFF;
+}
+table#cart tr.clsEven {
+      background-color:#FFFFFF;
+}
+table#cart th.delete,td.delete {
+      width:70px;
+      text-align:center;
+}
+table#cart th.item,td.item {
+      width:290px;
+      text-align:left;
+}
+table#cart th.quantity,td.quantity {
+      width:50px;
+      text-align:center;
+}
+table#cart th.price,td.price {
+      width:70px;
+      text-align:right;
+}
+input#updatesubtotal {
+      padding:10px 0px 10px 0px;
+}
+td#subtotal {
+      border-top: solid 1px #FFFFFF;
+      text-align:right;
+}
+td#updatesubtotal {
+      height:40px;
+      text-align:right;
+}
+div#cartbuttons {
+      padding-top:20px;
+      padding-bottom:20px;
+}
+div#keepshopping {
+      float:left;
+      vertical-align:center;
+}
+div#checkout {
+      float:right;
+      vertical-align:center;
+}
+
 /*Associate Provided CSS*/
 
 </style>
@@ -615,11 +688,11 @@ div#legalDisclaimers
    <p> </p>
    <div id="leftfoot">
      <%=link_to "All Books", root_path%>
-     | <a href="/angelboy-20/cart">Shopping Cart</a>
+     | <%=link_to "Shopping Cart", cart_path%>
      <br/>&nbsp;
  
    </div>
-   <div id="rightfoot"><a href="https://www.amazon.com?_encoding=UTF8&camp=212353&creative=380561&linkCode=sb1&tag=angelboy-20" target="_blank"><img src="http://g-ecx.images-amazon.com/images/G/01/associates/network/amazon-logos/powered-by-amazon-b._CB156424183_.png" width="87" alt="Powered by Amazon.com" name="pngImage" height="25" border="0" /></a></div>
+   <!--<div id="rightfoot"><a href="https://www.amazon.com?_encoding=UTF8&camp=212353&creative=380561&linkCode=sb1&tag=angelboy-20" target="_blank"><img src="http://g-ecx.images-amazon.com/images/G/01/associates/network/amazon-logos/powered-by-amazon-b._CB156424183_.png" width="87" alt="Powered by Amazon.com" name="pngImage" height="25" border="0" /></a></div>-->
   <p> </p>
  </div>
 </div>
