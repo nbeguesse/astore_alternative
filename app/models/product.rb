@@ -19,6 +19,9 @@ class Product < ActiveRecord::Base
   def self.lookup operation, opts
   	# Your AWS Access Key ID, as taken from the AWS Your Account page
   	aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+    if aws_access_key_id.nil?
+      raise "ACCESS KEY ID not set"
+    end
 
   	# Your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
   	aws_secret_key = ENV['AWS_SECRET_KEY']
